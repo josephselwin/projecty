@@ -22,6 +22,7 @@ public class CustinfoController {
         customer = customerJDBCTemplate.getCustomer(email);
 
         //return new Custinfo("Joseph","Selwin", "04-01-1986", "josephselwin@gmail.com");
-        return new Custinfo(customer.getFname(), customer.getLname(), customer.getDob(), customer.getEmail());
+        //return new Custinfo(customer.getFname(), customer.getLname(), customer.getDob(), customer.getEmail());
+        return new Custinfo(customer.getFname(), customer.getLname(), customer.getEmail());
     }
 }

@@ -15,7 +15,7 @@ public class CustomerJDBCTemplate implements CustomerDAO{
 
     public void setDataSource(DataSource dataSource) {
         this.dataSource = dataSource;
-        this.jdbcCall =  new SimpleJdbcCall(dataSource).withProcedureName("GET_CUSTOMER");
+        this.jdbcCall =  new SimpleJdbcCall(dataSource).withProcedureName("GET_USER");
     }
 
     public Customer getCustomer(String email) {
@@ -25,9 +25,9 @@ public class CustomerJDBCTemplate implements CustomerDAO{
 
         Customer customer = new Customer();
         customer.setEmail(email);
-        customer.setFname((String) out.get("pr_o_fname"));
-        customer.setLname((String) out.get("pr_o_lname"));
-        customer.setDob((java.sql.Date) out.get("pr_o_dob"));
+        customer.setFname((String) out.get("pr_o_first_name"));
+        customer.setLname((String) out.get("pr_o_last_name"));
+        //customer.setDob((java.sql.Date) out.get("pr_o_dob"));
 
         return customer;
     }

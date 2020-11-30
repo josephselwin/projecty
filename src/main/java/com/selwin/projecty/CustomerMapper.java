@@ -11,8 +11,8 @@ public class CustomerMapper implements RowMapper<Customer> {
 
         customer.setFname(rs.getString("pr_o_fname"));
         customer.setLname(rs.getString("pr_o_lname"));
-        customer.setDob(rs.getDate("pr_o_dob"));
-        customer.setEmail(rs.getString("pr_o_email"));
+        //customer.setDob(rs.getDate("pr_o_dob"));
+        //customer.setEmail(rs.getString("pr_o_email"));
 
         return customer;
     }
